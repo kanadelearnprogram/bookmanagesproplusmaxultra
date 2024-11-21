@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-form button {
+            padding: 10px;
+            background-color: #66ccff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #39c5bb;
+        }
+    </style>
+</head>
+<body>
+<p th:if="${!failure}">shuru</p>;
+<p th:if="${failure}">fuck</p>;
+
+<div class="login-container">
+    <h2 class="login-title">Login</h2>
+
+
+    <form method ="post" action="login" class="login-form">
+        <input type="text" name="Username" >
+        <input type="password" name="Password" >
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>

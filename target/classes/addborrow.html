@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookmanageIndex</title>
+
+</head>
+<body>
+<div>
+    <p>book</p>
+    <p th:text="${nickname}"></p>
+    <a href="logout">logout</a>
+    <a href="index">index</a>
+    <a href="books">bookmanage</a>
+    <a href="students">studentmanage</a>
+</div>
+<div>
+  <h3>
+      Addborrow
+  </h3>
+    <p>choice book and student</p>
+<div>
+    <form action="addborrow" method="post">
+        <label >book</label>
+        <select name="book">
+
+            <option th:value="${book.getBid()}" th:each="book:${booklist}" th:text="${book.getBookName()}"></option>
+        </select>
+        <label >student</label>
+        <select name="student">
+            <option th:value="${student.getSid()}" th:each="student:${studentlist}" th:text="${student.getName()}"></option>
+        </select>
+        <button type="submit">submit</button>
+    </form>
+
+</div>
+</div>
+</body>
+</html>

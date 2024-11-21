@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookmanageIndex</title>
+
+</head>
+<body>
+<div>
+    <p>book</p>
+    <p th:text="${nickname}"></p>
+    <a href="logout">logout</a>
+    <a href="index">index</a>
+    <a href="books">bookmanage</a>
+    <a href="students">studentmanage</a>
+</div>
+<a href="addbook">AddBook</a>
+<div>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>bookname</th>
+        <th>price</th>
+        <!--<th>borrowed</th>-->
+        <th>remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${booklist}">
+        <td th:text="${book.getBid()}">#j46</td>
+        <td th:text="${book.getBookName()}">sjfk</td>
+        <td th:text="${book.getPrice()}">dkslf</td>
+        <!--<td th:text="${book.get()}"></td>-->
+        <td><a th:href="'delete-book?bid='+${book.getBid()}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

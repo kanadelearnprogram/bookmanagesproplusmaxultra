@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookmanageIndex</title>
+
+</head>
+<body>
+<p>ciallo</p>
+<p th:text="${nickname}"></p>
+<a href="logout">logout</a>
+<a href="index">index</a>
+<a href="books">bookmanage</a>
+<a href="students">studentmanage</a>
+<div>
+    <a href="addborrow">AddBorrow</a>
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>bookname</th>
+            <th>sid</th>
+            <th>StudentName</th>
+            <th>bid</th>
+            <th>return</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr th:each="borrow :${book_list}">
+            <td th:text="${borrow.getBookId()}">#j46</td>
+            <td th:text="${borrow.getBookName()}">sjfk</td>
+            <td th:text="${borrow.getStudentId()}">dkslf</td>
+            <td th:text="${borrow.getStudentName()}"></td>
+            <td th:text="${borrow.getBookId()}"></td>
+            <td><a th:href="'return-book?id='+${borrow.getId()}">return</a></td>
+        </tr>
+        </tbody>
+        <tr>
+
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
